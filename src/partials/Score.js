@@ -9,7 +9,7 @@ export default class Score {
 
 
 
-  render(svg, score){
+  render(svg, score) {
     let text = document.createElementNS(SVG_NS,'text');
     text.setAttributeNS(null, 'x', this.x);
     text.setAttributeNS(null, 'y', this.y);

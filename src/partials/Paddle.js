@@ -34,14 +34,14 @@ export default class Paddle {
   }
 
   up(){
-    if (this.pause){
+    if(this.pause) {
 			return;
 		} 
     // get the max number
     this.y = Math.max(this.y - this.speed, 0);
   }
   down(){
-    if (this.pause){
+    if(this.pause) {
 			return;
 		} 
     // get the min number
@@ -49,9 +49,9 @@ export default class Paddle {
   }
 
 
-  render(svg){
+  render(svg) {
 
-    if (this.pause){
+    if(this.pause) {
 			return;
 		}
 

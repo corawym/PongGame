@@ -65,8 +65,6 @@ export default class Game {
 			this.size
 		);
 
-
-
 		document.addEventListener('keydown', event => {
       switch(event.key) {
         case KEYS.spaceBar:
@@ -74,7 +72,6 @@ export default class Game {
           break;
       }
     });
-
 	}
 
 	render() {
