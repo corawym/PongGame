@@ -18,18 +18,37 @@ export default class Paddle {
         case down:
           this.down();
           break;
+        // case spaceBar:
+        //   this.pause = !this.pause;
+        //   break;
       }
     });
   }
+
+  coordinates(x, y, width, height) {
+    let leftX = x;
+    let rightX = x + width;
+    let topY = y;
+    let bottomY = y + height;
+    return [leftX, rightX, topY, bottomY];
+  }
+
   up(){
+    // if (this.pause){
+		// 	return;
+		// } 
     // get the max number
     this.y = Math.max(this.y - this.speed, 0);
-
   }
   down(){
+    // if (this.pause){
+		// 	return;
+		// } 
     // get the min number
     this.y = Math.min(this.y + this.speed, this.boardHeight - this.height);
   }
+
+
 
   render(svg){
     let rect = document.createElementNS(SVG_NS,'rect');

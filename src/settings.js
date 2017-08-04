@@ -7,4 +7,3 @@ export const KEYS = {
   down: 'ArrowDown',     // player 2 down key
   spaceBar: ' ', 
 }
-
