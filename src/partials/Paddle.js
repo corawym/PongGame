@@ -1,7 +1,7 @@
 import {SVG_NS} from '../settings';
 
 export default class Paddle {
-  constructor(boardHeight, width, height, x, y, up, down) {
+  constructor(boardHeight, width, height, x, y, up, down, spaceBar) {
     this.boardHeight = boardHeight;
     this.width = width;
     this.height = height;
@@ -18,9 +18,9 @@ export default class Paddle {
         case down:
           this.down();
           break;
-        // case spaceBar:
-        //   this.pause = !this.pause;
-        //   break;
+        case spaceBar:
+          this.pause = !this.pause;
+          break;
       }
     });
   }
@@ -34,23 +34,27 @@ export default class Paddle {
   }
 
   up(){
-    // if (this.pause){
-		// 	return;
-		// } 
+    if (this.pause){
+			return;
+		} 
     // get the max number
     this.y = Math.max(this.y - this.speed, 0);
   }
   down(){
-    // if (this.pause){
-		// 	return;
-		// } 
+    if (this.pause){
+			return;
+		} 
     // get the min number
     this.y = Math.min(this.y + this.speed, this.boardHeight - this.height);
   }
 
 
-
   render(svg){
+
+    if (this.pause){
+			return;
+		}
+
     let rect = document.createElementNS(SVG_NS,'rect');
     rect.setAttributeNS(null, 'x', this.x); //
     rect.setAttributeNS(null, 'y', this.y); //
