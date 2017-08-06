@@ -1,6 +1,6 @@
 import {SVG_NS} from '../settings';
 
-export default class Score {
+export default class Message {
   constructor(x, y, size) {
     this.x = x;
     this.y = y;
@@ -9,7 +9,7 @@ export default class Score {
 
 
 
-  render(svg, score) {
+  render(svg, message) {
     let text = document.createElementNS(SVG_NS,'text');
     text.setAttributeNS(null, 'x', this.x);
     text.setAttributeNS(null, 'y', this.y);
@@ -17,7 +17,7 @@ export default class Score {
     text.setAttributeNS(null, 'font-family', '"Silkscreen Web", monotype'); 
     text.setAttributeNS(null, 'font-size', this.size);
     text.setAttributeNS(null, 'text-anchor', 'middle');
-    text.textContent = score;
+    text.textContent = message;
     svg.appendChild(text);
   }
 }

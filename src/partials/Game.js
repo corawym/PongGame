@@ -3,6 +3,7 @@ import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
+import Message from './Message';
 
 export default class Game {
 
@@ -50,7 +51,7 @@ export default class Game {
 		);
 
 		// score
-		this.y = 35;
+		this.y = 40;
 		this.size = 30;
 
 		this.score1 = new Score(
@@ -60,10 +61,23 @@ export default class Game {
 		);
 		
 		this.score2 = new Score(
-			this.width /2 + 50,
+			this.width /2 + 70,
 			this.y,
 			this.size
 		);
+
+		// message
+		this.messageStart = new Message(
+			this.width /2,
+			this.y /2,
+			this.size
+		)
+
+		this.messageWinner = new Message(
+			this.width /2,
+			this.y /2,
+			this.size
+		)
 
 		document.addEventListener('keydown', event => {
       switch(event.key) {

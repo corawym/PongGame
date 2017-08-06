@@ -51,16 +51,12 @@ export default class Paddle {
 
   render(svg) {
 
-    if(this.pause) {
-			return;
-		}
-
     let rect = document.createElementNS(SVG_NS,'rect');
     rect.setAttributeNS(null, 'x', this.x); //
     rect.setAttributeNS(null, 'y', this.y); //
     rect.setAttributeNS(null, 'width', this.width);
     rect.setAttributeNS(null, 'height', this.height);
-    rect.setAttributeNS(null, 'fill', 'white');
+    rect.setAttributeNS(null, 'fill', 'black');
     svg.appendChild(rect);
   }
 } // end class Paddle
