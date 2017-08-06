@@ -1,12 +1,14 @@
 import {SVG_NS} from '../settings';
 
 export default class Ball {
-  constructor(radius, boardWidth, boardHeight) {
+  constructor(radius, boardWidth, boardHeight, player1, player2) {
     this.radius = radius;
     this.boardWidth = boardWidth;
     this.boardHeight = boardHeight;
     this.direction = 1;
-    this.ping = new Audio('../public/sounds/pong-03.wav')
+    this.ping = new Audio('../public/sounds/pong-03.wav');
+    this.player1 = player1;
+    this.player2 = player2;
     this.reset();
   }
 
@@ -34,8 +36,12 @@ export default class Ball {
       if(hitLeft){
         this.goal(player2);
         this.vx = -this.vx;
+        this.player2.height += 4;
+        this.player1.height -= 4;
       }else{
         this.goal(player1);
+        this.player1.height += 4;
+        this.player2.height -= 4;
       }
 
     }else if( hitTop || hitBottom) {

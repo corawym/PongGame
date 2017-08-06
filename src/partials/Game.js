@@ -47,7 +47,9 @@ export default class Game {
 		this.ball = new Ball(
 			this.ballRadius,
 			this.width,
-			this.height
+			this.height, 
+			this.player1,
+			this.player2
 		);
 
 		// score
@@ -108,6 +110,7 @@ export default class Game {
 		this.ball.render(svg, this.player1, this.player2);
 		this.score1.render(svg, this.player1.score);
 		this.score2.render(svg, this.player2.score);
+
 	}
 
 }
