@@ -38,10 +38,14 @@ export default class Ball {
         this.vx = -this.vx;
         this.player2.height += 4;
         this.player1.height -= 4;
+        this.player1.resetPaddlePosition();
+        this.player2.resetPaddlePosition();
       }else{
         this.goal(player1);
         this.player1.height += 4;
         this.player2.height -= 4;
+        this.player1.resetPaddlePosition();
+        this.player2.resetPaddlePosition();
       }
 
     }else if( hitTop || hitBottom) {

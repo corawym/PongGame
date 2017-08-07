@@ -33,24 +33,27 @@ export default class Paddle {
     return [leftX, rightX, topY, bottomY];
   }
 
+  resetPaddlePosition(){
+    if(this.y + this.height >= this.boardHeight){
+      this.y = Math.min(this.y + this.speed, this.boardHeight - this.height);
+    }
+  }
+
   up(){
     if(this.pause) {
 			return;
 		} 
-    // get the max number
     this.y = Math.max(this.y - this.speed, 0);
   }
+
   down(){
     if(this.pause) {
 			return;
 		} 
-    // get the min number
     this.y = Math.min(this.y + this.speed, this.boardHeight - this.height);
   }
 
-
   render(svg) {
-
     let rect = document.createElementNS(SVG_NS,'rect');
     rect.setAttributeNS(null, 'x', this.x); //
     rect.setAttributeNS(null, 'y', this.y); //

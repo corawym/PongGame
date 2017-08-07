@@ -7,9 +7,18 @@ export default class Message {
     this.size = size;
   }
 
-
-
   render(svg, message) {
+    let textbg = document.createElementNS(SVG_NS,'text');
+    textbg.setAttributeNS(null, 'x', this.x);
+    textbg.setAttributeNS(null, 'y', this.y);
+    textbg.setAttributeNS(null, 'font-family', '"Silkscreen Web", monotype'); 
+    textbg.setAttributeNS(null, 'font-size', this.size);
+    textbg.setAttributeNS(null, 'text-anchor', 'middle');
+    textbg.setAttributeNS(null, 'stroke', 'white');
+    textbg.setAttributeNS(null, 'stroke-width', '100');
+    textbg.textContent = message;
+    svg.appendChild(textbg);
+
     let text = document.createElementNS(SVG_NS,'text');
     text.setAttributeNS(null, 'x', this.x);
     text.setAttributeNS(null, 'y', this.y);
