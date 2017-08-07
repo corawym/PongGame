@@ -25,4 +25,4 @@ export default class Board {
     line.setAttributeNS(null, 'stroke-dasharray', '30, 10');
     svg.appendChild(line);
   }
-}
+} // end class Board

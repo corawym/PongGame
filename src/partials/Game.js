@@ -130,4 +130,4 @@ export default class Game {
 			this.score2.render(svg, this.player2.score);
 		}
 	}
-}
+} // end class Game

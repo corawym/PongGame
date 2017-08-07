@@ -31,8 +31,7 @@ export default class Ball {
     const hitTop = this.y - this.radius <= 0;
     const hitBottom = this.y + this.radius >= this.boardHeight;
 
-    if(hitLeft || hitRight) {
-      
+    if(hitLeft || hitRight) {  
       if(hitLeft){
         this.goal(player2);
         this.vx = -this.vx;
@@ -51,7 +50,6 @@ export default class Ball {
     }else if( hitTop || hitBottom) {
       this.vy = -this.vy;
     }
-
   }
 
   paddleCollision(player1, player2) {
@@ -101,4 +99,4 @@ export default class Ball {
     circle.setAttributeNS(null, 'fill', 'black'); 
     svg.appendChild(circle);
   }
-}
+} // end class Ball

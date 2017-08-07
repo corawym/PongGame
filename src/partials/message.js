@@ -29,4 +29,4 @@ export default class Message {
     text.textContent = message;
     svg.appendChild(text);
   }
-}
+} // end class Message
