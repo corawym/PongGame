@@ -2,6 +2,11 @@
 
 A pong game using SVGs. It is a two players game. Player scores when the ball hits on the opposite wall. The one who has the paddle at the end wins.
 
+## Technologies used
+- plain vanilla JS
+- SVGs
+- OOP
+
 ## Setup
 
 **Install dependencies:**
